@@ -21,14 +21,23 @@ which templates loop over to generate a list of posts. --}}
     {{/if}}
 
     <div class="post-card-content">
+        <div class="post-card-header-tagarea">
+            {{#if primary_tag}}
+                {{#primary_tag}}
+                    <div class="post-card-primary-tag">{{name}}</div>
+                {{/primary_tag}}
+            {{/if}}
+            <span class="bull">&bull;</span>
+            <div class="post-card-primary-author">
+                <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
+            </div>
+            <span class="bull">&bull;</span>
+            <span class="post-card-datetime"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+        </div>
 
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
-                {{#if primary_tag}}
-                    {{#primary_tag}}
-                    <div class="post-card-primary-tag">{{name}}</div>
-                    {{/primary_tag}}
-                {{/if}}
+                
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
             <div class="post-card-excerpt">
@@ -36,7 +45,7 @@ which templates loop over to generate a list of posts. --}}
             </div>
         </a>
 
-        <footer class="post-card-meta">
+        {{!-- <footer class="post-card-meta">
             <ul class="author-list">
                 {{#foreach authors}}
                 <li class="author-list-item">
@@ -54,8 +63,10 @@ which templates loop over to generate a list of posts. --}}
                 <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
                 <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
             </div>
-        </footer>
+        </footer> --}}
 
-    </div>{{!--/.post-card-content--}}
+    </div>
+    
+    {{!--/.post-card-content--}}
 
 </article>
