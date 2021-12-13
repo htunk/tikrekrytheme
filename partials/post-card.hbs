@@ -24,7 +24,7 @@ which templates loop over to generate a list of posts. --}}
         <div class="post-card-header-tagarea">
             {{#if primary_tag}}
                 {{#primary_tag}}
-                    <div class="post-card-primary-tag">{{name}}</div>
+                    <a class="post-card-primary-tag" href="{{url}}">{{name}}</a>
                 {{/primary_tag}}
             {{/if}}
             <span class="bull">&bull;</span>

@@ -21,6 +21,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 11. Site Footer
 12. Dark Mode
+13. Tag page
 
 */
 
@@ -812,6 +813,15 @@ make sure this only happens on large viewports / desktop-ish devices.
         border-top: 0;
     }
 
+    .post-card-large-tagpage {
+        grid-column: 1 / span 3;
+        display: grid;
+        grid-gap: 4vmin;
+        grid-template-columns: 1fr 1fr 1fr;
+        min-height: 280px;
+        border-top: 0;
+    }
+
     .post-feed.list .post-card-large {
         grid-template-columns: 3fr 5fr;
         min-height: auto;
@@ -918,6 +928,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .article-title {
     color: color-mod(var(--color-darkgrey) l(-5%));
+    margin-bottom: 0px;
 }
 
 .has-serif-title .article-title {
@@ -2066,6 +2077,13 @@ html.dark-mode .site-archive-header .no-image {
         background: var(--color-darkmode);
     }
 }
+
+
+
+/* 13. Tag pages
+/* ---------------------------------------------------------- */
+
+/* Defined in tag.hbs as for some reason id selector not working here */
 
 /*
 
