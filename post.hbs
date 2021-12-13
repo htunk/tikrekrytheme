@@ -19,10 +19,48 @@ into the {body} tag of the default.hbs template --}}
             {{/if}}
 
             <h1 class="article-title">{{title}}</h1>
-
-            {{#if custom_excerpt}}
-            <p class="article-excerpt">{{custom_excerpt}}</p>
+            <div class="post-card-header-tagarea">
+            {{#if primary_tag}}
+                {{#primary_tag}}
+                    <div class="post-card-primary-tag">{{name}}</div>
+                {{/primary_tag}}
             {{/if}}
+            <span class="bull">&bull;</span>
+            <div class="post-card-primary-author">
+                <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
+            </div>
+            <span class="bull">&bull;</span>
+            <span class="post-card-datetime"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+        </div>
+
+            {{!-- {{#if custom_excerpt}}
+            <p class="article-excerpt">{{custom_excerpt}}</p>
+            {{/if}} --}}
+
+            
+
+            <!--{{#if feature_image}}
+            <figure class="article-image">
+                {{! This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 }}
+                <img
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(min-width: 1400px) 1400px, 92vw"
+                    src="{{img_url feature_image size="xl"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                />
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+            {{/if}}-->
+        </header>
+
+        <section class="gh-content gh-canvas">
+            {{content}}
 
             <div class="article-byline">
                 <section class="article-byline-content">
@@ -43,34 +81,11 @@ into the {body} tag of the default.hbs template --}}
                         <h4 class="author-name">{{authors}}</h4>
                         <div class="byline-meta-content">
                             <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                            <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                            {{!-- <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span> --}}
                         </div>
                     </div>
                 </section>
             </div>
-
-            {{#if feature_image}}
-            <figure class="article-image">
-                {{!-- This is a responsive image, it loads different sizes depending on device
-                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(min-width: 1400px) 1400px, 92vw"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                />
-                {{#if feature_image_caption}}
-                    <figcaption>{{feature_image_caption}}</figcaption>
-                {{/if}}
-            </figure>
-            {{/if}}
-        </header>
-
-        <section class="gh-content gh-canvas">
-            {{content}}
         </section>
 
         {{!--
@@ -79,7 +94,9 @@ into the {body} tag of the default.hbs template --}}
         </section>
         --}}
 
+    
     </article>
+    
 </main>
 
 {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
