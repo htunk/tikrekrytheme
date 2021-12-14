@@ -21,7 +21,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 11. Site Footer
 12. Dark Mode
-13. Tag page
+13. Tag and author pages
 
 */
 
@@ -2080,10 +2080,11 @@ html.dark-mode .site-archive-header .no-image {
 
 
 
-/* 13. Tag pages
+/* 13. Tag and author pages
 /* ---------------------------------------------------------- */
+/* Defined in tag.hbs and author.hbs as for some reason id selector not working here */
 
-/* Defined in tag.hbs as for some reason id selector not working here */
+
 
 /*
 

@@ -1,57 +1,80 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
+<style>
+    #author-page-post-card-large {
+        box-shadow: none;
+        justify-content: center;
+        min-height: fit-content;
+        margin-top: 50px;
+    }
+    @media (max-width: 1001px) {
+        #author-page-post-card-large {
+            margin-top:24px;
+        }
+    }
 
-<section class="outer">
-    <div class="inner posts">
+    @media (max-width: 501px) {
+        #author-page-post-card-large {
+            margin-top: 18px;
+        }
+    }
 
-        <header class="author-profile">
-            {{#author}}
-            {{!-- Everything inside the #author tags pulls data from the author --}}
+    #author-page-post-card-content {
+        justify-content: center;
+        width: auto;
+    }
+</style>
 
-            <div class="author-profile-content">
+<main class="site-main outer">
+    {{#author}}
+        {{!-- Everything inside the #author tags pulls data from the author --}}
 
-                {{#if profile_image}}
-                <img class="author-profile-pic" src="{{profile_image}}" alt="{{name}}" />
-                {{else}}
-                <span class="author-profile-pic">{{> "icons/avatar"}}</span>
-                {{/if}}
-
-                <h1>{{name}}</h1>
-                <p>
-                    {{#if bio}}
-                        {{bio}}
-                    {{else}}
-                        {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} published
-                    {{/if}}
-                </p>
-
-                <div class="author-profile-meta">
-                    {{#if location}}
-                    <div class="author-profile-location">📍 {{location}}</div>
-                    {{/if}}
-                    {{#if website}}
-                    <span><a class="author-profile-social-link" href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
-                    {{/if}}
-                    {{#if twitter}}
-                    <span><a class="author-profile-social-link" href="{{twitter_url}}" target="_blank" rel="noopener">{{twitter_url}}</a></span>
-                    {{/if}}
-                    {{#if facebook}}
-                    <span><a class="author-profile-social-link" href="{{facebook_url}}" target="_blank" rel="noopener">{{facebook_url}}</a></span>
-                    {{/if}}
+        <div class="inner posts post-card post-card-large" id="author-page-post-card-large">
+            <div class="post-card-content" id="author-page-post-card-content">
+                <div class="post-card-content-link">
+                    <header class="post-card-header">
+                        <div class="post-card-primary-tag">Company</div>
+                        <h2 class="post-card-title">{{name}}</h2>
+                    </header>
+                    <div class="post-card-excerpt">
+                        <p>
+                            {{#if bio}}
+                                {{bio}}
+                            {{else}}
+                                {{plural ../pagination.total empty='No ads' singular='% ad' plural='% ads'}} currently
+                            {{/if}}
+                            {{#if website}}
+                        <span><a class="author-profile-social-link" href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
+                        {{/if}}
+                        </p>
+                    </div>
+                    <div class="author-profile-meta">
+                        <!-- {{#if location}}
+                        <div class="author-profile-location">📍 {{location}}</div>
+                        {{/if}} -->
+                        
+                        <!--{{#if twitter}}
+                        <span><a class="author-profile-social-link" href="{{twitter_url}}" target="_blank" rel="noopener">{{twitter_url}}</a></span>
+                        {{/if}} -->
+                        <!-- {{#if facebook}}
+                        <span><a class="author-profile-social-link" href="{{facebook_url}}" target="_blank" rel="noopener">{{facebook_url}}</a></span>
+                        {{/if}} -->
+                    </div>
                 </div>
+            </div>{{!--/.post-card-content--}}
+        </div>
+    {{/author}}
 
-            </div>
-
-            {{/author}}
-        </header>
-
-        <div class="post-feed">
+    <div class="inner">
+        <div class="post-feed" id="author-post-feed">
             {{#foreach posts}}
+
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
-            {{/foreach}}
-        </div>
 
+            {{/foreach}}
+
+        </div>
     </div>
-</section>
+</main>
