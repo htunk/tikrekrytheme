@@ -1,5 +1,5 @@
 {
-    "name": "Tikrekry",
+    "name": "tikrekry",
     "description": "Ghost theme for TiK recruiting platform forked from Casper",
     "version": "0.0.1",
     "engines": {
@@ -19,7 +19,8 @@
         "postship": "git fetch && gulp release"
     },
     "author": {
-        "name": "Henri Tunkkari"
+        "name": "Henri Tunkkari",
+        "email": "henri.tunkkari@aalto.fi"
     },
     "gpm": {
         "type": "theme",
