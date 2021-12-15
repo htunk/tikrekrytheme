@@ -129,7 +129,7 @@ production stylesheet in assets/built/screen.css
     align-items: center;
     padding: 6vw 3vw;
     min-height: 200px;
-    max-height: 340px;
+    max-height: 200px;
     text-align: center;
 }
 
@@ -137,6 +137,7 @@ production stylesheet in assets/built/screen.css
     z-index: 10;
     margin: 0 0 0.15em;
     padding: 0;
+    text-shadow: 0px 4px 25px #000000;
 }
 
 .site-logo {
@@ -149,6 +150,7 @@ production stylesheet in assets/built/screen.css
     margin: 0 auto;
     line-height: 1.2em;
     opacity: 0.8;
+    text-shadow: 0px 4px 25px #000000;
 }
 
 @media (max-width: 600px) {
@@ -168,7 +170,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .site-header-content {
-    padding: 18vmin 4vmin;
+    padding: 12vmin 4vmin;
     font-size: 2.5rem;
     font-weight: 400;
     color: #fff;
@@ -218,7 +220,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .gh-head-logo {
-    display: block;
+    display: flex;
     padding: 10px 0;
     font-weight: 700;
     font-size: 2rem;
@@ -228,6 +230,7 @@ production stylesheet in assets/built/screen.css
 
 .gh-head-logo img {
     max-height: 26px;
+    margin-right: 10px;
 }
 
 
@@ -326,6 +329,31 @@ a.gh-head-button {
     line-height: 1em;
     background: var(--button-bg-color, #fff);
     border-radius: 30px;
+}
+
+a.gh-head-button-mobile {
+    display: none;
+    padding: 7px 15px;
+    color: var(--button-text-color, var(--color-darkgrey));
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    font-size: 1.5rem;
+    line-height: 1em;
+    background: var(--button-bg-color, #fff);
+    border-radius: 30px;
+}
+
+@media (max-width: 501px) {
+    a.gh-head-button-mobile {
+        padding: 6px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    a.gh-head-button-mobile {
+        display: block;
+    }
 }
 
 
