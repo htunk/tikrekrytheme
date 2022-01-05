@@ -28,7 +28,15 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
 
+        {{#unless posts.length}}
+            <div class="no-posts-currently-header">
+                <h1>No job advertisements currently 🏜️</h1>
+                <a href="/subscribing">Get notified of new openings?</a>
+            </div>
+        {{/unless}}
+
         <div class="post-feed{{#match @custom.feed_layout "List"}} list{{/match}}">
+            
             {{#foreach posts}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}

@@ -588,6 +588,19 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
+.no-posts-currently-header {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.no-posts-currently-header h1 {
+    margin-bottom: 0.25em;
+}
+
+.no-posts-currently-header a {
+    text-decoration: underline;
+}
+
 .post-card {
     position: relative;
     flex: 1 1 301px;

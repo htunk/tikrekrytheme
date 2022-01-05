@@ -51,6 +51,14 @@
         </div>
     {{/tag}}
     <div class="inner posts">
+        
+        {{#unless posts.length}}
+            <div class="no-posts-currently-header">
+                <h1>No openings ... for now 🤞</h1>
+                <a href="/subscribing">Get notified of new ads?</a>
+            </div>
+        {{/unless}}
+        
         <div class="post-feed">
             {{#foreach posts}}
 
