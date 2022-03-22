@@ -12,6 +12,7 @@ production stylesheet in assets/built/screen.css
   4.2 Archive header
 5.  Site Navigation
 6.  Post Feed
+  6.1 TiK Custom page feed
 7.  Single Post
   7.1. Post Byline
   7.2. Members Subscribe Form
@@ -586,6 +587,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         grid-template-columns: 1fr;
         grid-gap: 40px;
     }
+    .post-feed.pages {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
 }
 
 .no-posts-currently-header {
@@ -835,6 +840,140 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .single-author-name {
     display: inline-block;
 }
+
+
+ /* 6.1 TiK Custom page feed */
+ 
+ /* TiK custom small card for regular partners */
+/*
+ .post-card {
+    position: relative;
+    flex: 1 1 301px;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    background-size: cover;
+    word-break: break-word;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 14px;
+}
+*/
+ .page-card {
+    position: relative;
+    display: flex;
+    flex: 1 1 301px;
+    flex-direction: column;
+    min-height: 220px;
+    max-height: 220px;
+    background-size: cover;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.18);
+    border-radius: 14px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* @media (max-width: 1000px) {
+    .page-card {
+        position: relative;
+        display: flex;
+        flex: 1 1 301px;
+        flex-direction: column;
+        min-height: 220px;
+        background-size: cover;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.18);
+        border-radius: 14px;
+        justify-content: center;
+        align-items: center;
+    }
+} */
+
+@media (max-width: 700px) {
+    .page-card {
+        position: relative;
+        display: flex;
+        flex: 1 1 301px;
+        flex-direction: column;
+        min-height: 200px;
+        background-size: cover;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.18);
+        border-radius: 14px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .page-card {
+        min-height: 162px;
+        max-height: 162px;
+    }
+}
+
+
+.partnerpage-card-image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 14px;
+}
+
+.partnerpage-card-image {
+    width: 100%;
+    height: 100%;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+@media (max-width: 700px) {
+    .partnerpage-card-image {
+        max-height: 100%;
+        object-fit: fill;
+    }
+}
+
+ /* TiK custom large card for main partners */
+
+ .mainpartner-card {
+    grid-column: 1 / span 3;
+    min-height: 280px;
+    border-top: 0;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainpartner-card-image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 14px;
+}
+
+.mainpartner-card-image {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+@media (min-width: 1000px) {
+    .mainpartner-card {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 550px) {
+    .mainpartner-card-image {
+        object-fit: fill;
+    }
+}
+
+
 
 /* Special Styling for home page grid (below):
 

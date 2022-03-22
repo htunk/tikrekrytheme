@@ -1,0 +1,52 @@
+{{!< default}} {{!-- The main content area --}} <main id="site-main" class="site-main outer">
+    <div class="inner posts">
+        <div class="post-feed{{#match @custom.feed_layout " List"}} list{{/match}}">
+
+            {{#get "pages" filter="tags:mainpartnerpage"}}
+            {{#foreach pages}}
+
+            <article class="page-card mainpartner-card">
+
+                {{#if feature_image}}
+                <a class="mainpartner-card-image-link" href="{{url}}">
+                    <img class="mainpartner-card-image" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url
+                        feature_image size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url
+                        feature_image size="xl" }} 2000w" sizes="(max-width: 1000px) 400px, 800px"
+                        src="{{img_url feature_image size=" m"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" loading="lazy" />
+                </a>
+                {{/if}}
+
+            </article>
+            {{/foreach}}
+            {{/get}}
+        </div>
+
+
+        <div class="post-feed{{#match @custom.feed_layout " List"}} list{{/match}} pages">
+            
+            {{#get "pages" filter="tags:partnerpage"}}
+            {{#foreach pages}}
+        
+            <article class="page-card post tag-senior">
+
+                {{#if feature_image}}
+                <a class="partnerpage-card-image-link" href="{{url}}">
+                    {{!-- This is a responsive image, it loads different sizes depending on device
+                    https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433
+                    --}}
+                    <img class="partnerpage-card-image" srcset="{{img_url feature_image size=" s"}} 300w, {{img_url
+                        feature_image size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url
+                        feature_image size="xl" }} 2000w" sizes="(max-width: 1000px) 400px, 800px"
+                        src="{{img_url feature_image size=" m"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" loading="lazy" />
+                </a>
+                {{/if}}
+
+            </article>
+
+            {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+    </main>
