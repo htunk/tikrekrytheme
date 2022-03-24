@@ -2,7 +2,7 @@
     <div class="inner posts">
         <div class="post-feed{{#match @custom.feed_layout " List"}} list{{/match}}">
 
-            {{#get "posts" filter="tags:mainpartnerpage" as |mainpartners|}}
+            {{#get "posts" filter="tags:hash-mainpartnerpage" as |mainpartners|}}
             {{#foreach mainpartners}}
 
             <article class="page-card mainpartner-card">
@@ -25,7 +25,7 @@
 
         <div class="post-feed{{#match @custom.feed_layout " List"}} list{{/match}} pages">
             
-            {{#get "posts" filter="tags:partnerpage+tags:-mainpartnerpage" as |partners|}}
+            {{#get "posts" filter="tags:hash-partnerpage+tags:-hash-mainpartnerpage" as |partners|}}
             {{#foreach partners}}
         
             <article class="page-card post tag-senior">
