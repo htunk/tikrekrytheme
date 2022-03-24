@@ -121,6 +121,7 @@ production stylesheet in assets/built/screen.css
     object-fit: cover;
 }
 
+/* THIS NAVBAR SETUP ONLY SUPPORTS EXACTLY THREE LINKS */
 .site-header-navbar {
     display: flex;
     position: absolute;
