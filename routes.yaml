@@ -4,7 +4,7 @@ collections:
   /partners/:
     permalink: /partners/{slug}/
     template: page-partners
-    filter: tag:partnerpage
+    filter: tag:[hash-mainpartnerpage,hash-partnerpage]
   /:
     permalink: /{slug}/
     template: index
